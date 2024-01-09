@@ -1,4 +1,4 @@
-# Adaptogen: Assistive Tool for Project Documentation Generation and Mutation
+# Adaptogen: Assistive Tool for Project Specification and Content Generation and Mutation
 
 ## Introduction
 
