@@ -1,0 +1,7 @@
+cachetools~=5.3
+certifi~=2023.7
+openai~=1.6
+pyyaml~=6.0
+tenacity~=8.2
+typeguard~=4.1
+yarl~=1.9

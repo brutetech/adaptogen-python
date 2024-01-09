@@ -1,0 +1,63 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools-scm[toml]~=8.0",
+    "setuptools~=68.2",
+    "wheel~=0.41",
+]
+
+[project]
+authors = [
+    {email = "spencersr@gmail.com"},
+    {name = "Shane R. Spencer"},
+]
+description = "Adaptogen utilizes OpenAI's GPT-4 to dynamically enhance and connect markdown documents, aiming to expand topics until achieving clear multi-disciplinary document readability."
+dynamic = [
+    "dependencies",
+    "optional-dependencies",
+    "version",
+]
+license = {text = "MIT License"}
+name = "adaptogen"
+readme = "README.md"
+
+[project.urls]
+homepage = "https://github.com/brutetech/adaptogen-python"
+
+[tool.black]
+line_length = 120
+
+[tool.flake8]
+doctests = true
+max-line-length = 120
+
+[tool.isort]
+line_length = 120
+profile = "black"
+
+[tool.mypy]
+mypy_path = "src"
+namespace_packages = true
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --cov --durations=0 -n auto --showlocals --verbose"
+testpaths = [
+    "src",
+    "tests",
+]
+
+[tool.setuptools.dynamic.dependencies]
+file = ["requirements/production.in"]
+
+[tool.setuptools.dynamic.optional-dependencies]
+bootstrap = {file = ["requirements/bootstrap.in"]}
+deployment = {file = ["requirements/deployment.in"]}
+development = {file = ["requirements/development.in"]}
+
+[tool.setuptools.packages.find]
+where = [
+    "src",
+]
+
+[tool.setuptools_scm]
+version_scheme = "python-simplified-semver"
